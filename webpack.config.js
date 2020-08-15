@@ -27,6 +27,22 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader"]
       },
+      {
+        test: /\.css$/i,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: false,
+              modules: {
+                localIdentName: '[local]__[hash:base64:5]',
+              },
+            },
+          },
+        ],
+      },
     ],
   },
 }
