@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react'
 
 import styles from './Gallery.module.css'
 
+//Import Components
+import GalleryItem from '../GalleryItem/GalleryItem'
+
 const Gallery = () => {
   const [photos, setPhotos] = useState([])
 
@@ -17,9 +20,11 @@ const Gallery = () => {
   return (
     <div className={styles.gallery}>
       {photos.map((photo) => (
-        <div key={photo.id}>
-          <img src={photo.thumbnailUrl} alt="" />
-        </div>
+        <GalleryItem
+          key={photo.id}
+          url={photo.url}
+          thumbnailUrl={photo.thumbnailUrl}
+        />
       ))}
     </div>
   )
