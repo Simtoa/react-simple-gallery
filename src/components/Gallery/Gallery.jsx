@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react'
 
 import styles from './Gallery.module.css'
 
-import Header from '../header/Header'
-
 const Gallery = () => {
   const [photos, setPhotos] = useState([])
 
@@ -15,10 +13,6 @@ const Gallery = () => {
     }
     fetchPhotos()
   }, [])
-
-  useEffect(() => {
-    console.log(photos)
-  }, [photos])
 
   return (
     <div className={styles.gallery}>
