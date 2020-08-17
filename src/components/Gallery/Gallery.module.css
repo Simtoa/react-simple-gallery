@@ -1,8 +1,14 @@
-.header {
+.gallery {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  justify-content: space-between;
+  align-content: flex-start;
+  margin: 0 auto;
 
-  h1 {
-    margin-right: 30px;
+  div {
+    display: block;
+    width: calc(33.33% - 30px);
+    margin-bottom: 45px;
   }
 }
