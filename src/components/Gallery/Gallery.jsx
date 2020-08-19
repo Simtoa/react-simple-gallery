@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 
 import styles from './Gallery.module.css'
 
 //Import Components
 import GalleryItem from '../GalleryItem/GalleryItem'
 
-const Gallery = () => {
+const Gallery = ({ setLigtboxImg }) => {
   const [photos, setPhotos] = useState([])
 
   useEffect(() => {
@@ -21,6 +21,7 @@ const Gallery = () => {
     <div className={styles.gallery}>
       {photos.map((photo) => (
         <GalleryItem
+          setLigtboxImg={setLigtboxImg}
           key={photo.id}
           url={photo.url}
           thumbnailUrl={photo.thumbnailUrl}
