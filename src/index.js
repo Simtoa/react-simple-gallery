@@ -17,7 +17,7 @@ const App = () => {
     <>
       <Header />
       <Gallery setLigtboxImg={setLigtboxImg} />
-      {lightboxImg && <Lightbox img={lightboxImg} setLigtboxImg={setLigtboxImg} />}
+      {lightboxImg && <Lightbox photoDetail={lightboxImg} setLigtboxImg={setLigtboxImg} />}
     </>
   )
 };

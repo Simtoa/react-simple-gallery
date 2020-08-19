@@ -23,8 +23,7 @@ const Gallery = ({ setLigtboxImg }) => {
         <GalleryItem
           setLigtboxImg={setLigtboxImg}
           key={photo.id}
-          url={photo.url}
-          thumbnailUrl={photo.thumbnailUrl}
+          photoDetail={photo}
         />
       ))}
     </div>

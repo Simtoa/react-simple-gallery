@@ -2,20 +2,20 @@ import React from 'react'
 
 import styles from './GalleryItem.module.css'
 
-const GalleryItem = ({ url, thumbnailUrl, setLigtboxImg }) => {
-  const setImg = (e, url) => {
+const GalleryItem = ({ photoDetail, setLigtboxImg }) => {
+  const setImg = (e, photoDetail) => {
     e.preventDefault()
-    setLigtboxImg(url)
+    setLigtboxImg(photoDetail)
   }
   return (
     <div className={styles.galleryItem}>
       <a
-        href={url}
+        href={photoDetail.url}
         onClick={(e) => {
-          setImg(e, url)
+          setImg(e, photoDetail)
         }}
       >
-        <img src={thumbnailUrl} alt="" />
+        <img src={photoDetail.thumbnailUrl} alt="" />
       </a>
     </div>
   )

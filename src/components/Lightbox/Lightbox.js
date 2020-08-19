@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './Lightbox.module.css'
 
-const Lightbox = ({ img, setLigtboxImg }) => {
+const Lightbox = ({ photoDetail, setLigtboxImg }) => {
   const closeLightbox = (e) => {
     if (e.target.classList.contains(styles.overlay)) {
       setLigtboxImg(null)
@@ -10,7 +10,10 @@ const Lightbox = ({ img, setLigtboxImg }) => {
   }
   return (
     <div className={styles.overlay} onClick={closeLightbox}>
-      <img src={img} alt="" />
+      <div className={styles.imgContainer}>
+        <img src={photoDetail.url} alt="" />
+        <div className={styles.title}>{photoDetail.title}</div>
+      </div>
     </div>
   )
 }
