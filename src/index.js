@@ -16,7 +16,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <Gallery setLigtboxImg={setLigtboxImg} />
+      <Gallery dataAddres="src/data/photos.json" setLigtboxImg={setLigtboxImg} />
       {lightboxImg && <Lightbox photoDetail={lightboxImg} setLigtboxImg={setLigtboxImg} />}
     </>
   )
