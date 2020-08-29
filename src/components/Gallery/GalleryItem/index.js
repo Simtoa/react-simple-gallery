@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './GalleryItem.module.css'
+import styles from './index.module.css'
 
 const GalleryItem = ({ photoDetail, setLigtboxImg }) => {
   const setImg = (e, photoDetail) => {

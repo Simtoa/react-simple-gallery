@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-import styles from './Gallery.module.css'
+import styles from './index.module.css'
 
 //Import Components
-import GalleryItem from '../GalleryItem/GalleryItem'
+import GalleryItem from './GalleryItem/'
 
 const Gallery = ({ setLigtboxImg }) => {
   const [photos, setPhotos] = useState([])

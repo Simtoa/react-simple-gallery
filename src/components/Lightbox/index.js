@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './Lightbox.module.css'
+import styles from './index.module.css'
 
 const Lightbox = ({ photoDetail, setLigtboxImg }) => {
   const closeLightbox = (e) => {

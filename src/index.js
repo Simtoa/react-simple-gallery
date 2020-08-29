@@ -6,9 +6,9 @@ import 'css/simtonit.css'
 import 'css/app.css'
 
 //Import Components
-import Header from "./components/header/Header";
-import Gallery from "./components/Gallery/Gallery";
-import Lightbox from "./components/Lightbox/Lightbox";
+import Header from "./components/Header";
+import Gallery from "./components/Gallery";
+import Lightbox from "./components/Lightbox";
 
 const App = () => {
   const [lightboxImg, setLigtboxImg] = useState(null)
