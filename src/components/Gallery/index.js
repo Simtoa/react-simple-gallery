@@ -6,16 +6,17 @@ import styles from './index.module.css'
 import GalleryItem from './GalleryItem/'
 
 const Gallery = ({ dataAddres, setLigtboxImg }) => {
-  const [photos, setPhotos] = useState([])
+  const [galleryState, setGalleryState] = useState({ photos: [], loading: true, errorMsg: "" })
+
 
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
         const response = await fetch(dataAddres)
         const results = await response.json()
-        setPhotos(results)
+        setGalleryState({ photos: results, loading: false, errorMsg: "" })
       } catch (e) {
-        console.log("Hata", e)
+        setGalleryState({ photos: [], loading: false, errorMsg: e })
       }
     }
     fetchPhotos()
@@ -23,13 +24,17 @@ const Gallery = ({ dataAddres, setLigtboxImg }) => {
 
   return (
     <div className={styles.gallery}>
-      {photos.map((photo) => (
-        <GalleryItem
-          setLigtboxImg={setLigtboxImg}
-          key={photo.id}
-          photoDetail={photo}
-        />
-      ))}
+      {galleryState.loading && <p>Yükleniyor...</p>}
+      {galleryState.errorMsg && <p>Hata... {/* galleryState.errorMsg */}</p>}
+
+      {galleryState.photos &&
+        galleryState.photos.map((photo) => (
+          <GalleryItem
+            setLigtboxImg={setLigtboxImg}
+            key={photo.id}
+            photoDetail={photo}
+          />
+        ))}
     </div>
   )
 }
