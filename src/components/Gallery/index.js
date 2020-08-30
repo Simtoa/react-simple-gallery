@@ -16,7 +16,7 @@ const Gallery = ({ dataAddres, setLigtboxImg }) => {
         const results = await response.json()
         setGalleryState({ photos: results, loading: false, errorMsg: "" })
       } catch (e) {
-        setGalleryState({ photos: [], loading: false, errorMsg: e })
+        setGalleryState({ photos: [], loading: false, errorMsg: e.message })
       }
     }
     fetchPhotos()
@@ -25,7 +25,7 @@ const Gallery = ({ dataAddres, setLigtboxImg }) => {
   return (
     <div className={styles.gallery}>
       {galleryState.loading && <p>Yükleniyor...</p>}
-      {galleryState.errorMsg && <p>Hata... {/* galleryState.errorMsg */}</p>}
+      {galleryState.errorMsg && <p>Hata: {galleryState.errorMsg}</p>}
 
       {galleryState.photos &&
         galleryState.photos.map((photo) => (
